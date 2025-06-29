@@ -1,1 +1,43 @@
-*** empty ***
+volumes:
+  pg_data:
+  static:
+  media:
+
+services:
+  db:
+    image: postgres:13
+    env_file: backend/.env
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+  backend:
+    image: babybeardocker/kittygram_backend
+  #  build: ./backend/
+    env_file: backend/.env
+    volumes:
+      - static:/backend_static
+    ports:
+      - "8000:8000" # *************************
+    depends_on:
+      - db
+  frontend:
+   # build: ./frontend/
+    image: babybeardocker/kittygram_frontend
+    command: cp -r /app/build/. /static/
+#    command: >
+#      sh -c "
+#        cp -r /app/build/* /static/ &&
+#        cp -r /app/build/static/* /static/static/
+#      "
+    volumes:
+      - static:/static
+
+  gateway:
+    image: babybeardocker/kittygram_gateway
+    ports:
+      - 9000:80
+    volumes:
+      - static:/static
+    depends_on:
+      - backend
+    restart: always
+
