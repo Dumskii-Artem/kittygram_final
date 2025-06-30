@@ -14,6 +14,8 @@ services:
     env_file: .env
     volumes:
       - static:/backend_static
+      - media:/app/media
+
     ports:
       - "8001:8000" # *************************
     depends_on:
