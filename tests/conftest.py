@@ -14,7 +14,7 @@ TASKI_DOMAIN_KEY = 'taski_domain'
 DOCKERFILE_NAME = 'Dockerfile'
 DOCKERHUB_USERNAME_KEY = 'dockerhub_username'
 WORKFLOW_FILE = 'kittygram_workflow.yml'
-DOCKER_COMPOSE_PROD_FILE_NAME = 'docker-compose.production.yml'
+DOCKER_COMPOSE_PROD_FILE_NAME = 'kitty-compose.production.yml'
 
 for dir_name in (BACKEND_DIR_NAME, FRONTEND_DIR_NAME, NGINX_DIR_NAME):
     path_to_dir = BASE_DIR / dir_name
