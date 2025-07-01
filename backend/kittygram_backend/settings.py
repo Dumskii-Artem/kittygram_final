@@ -10,7 +10,8 @@ DEBUG = True
 
 # ALLOWED_HOSTS = ['*']
 ALLOWED_HOSTS = [
-    'kittygram.example.com',
+    'catsonlynodogs.myddns.me',
+    '89.169.164.5',
     '127.0.0.1',
     'localhost',
 ]
