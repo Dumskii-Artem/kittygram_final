@@ -15,7 +15,7 @@ services:
     volumes:
       - static:/backend_static
       - media:/app/media
-      - pg_data
+      - pg_data:/var/lib/postgresql/data
 
     ports:
       - "8001:8000" # *************************
