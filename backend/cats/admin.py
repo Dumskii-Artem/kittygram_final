@@ -14,3 +14,8 @@ class AchievementAdmin(admin.ModelAdmin):
 @admin.register(AchievementCat)
 class AchievementCatAdmin(admin.ModelAdmin):
     list_display = ('achievement', 'cat')
+
+
+admin.site.register(Cat)
+admin.site.register(Achievement)
+admin.site.register(AchievementCat)
