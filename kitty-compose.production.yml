@@ -15,14 +15,12 @@ services:
     volumes:
       - static:/backend_static
       - media:/app/media
-      - pg_data:/var/lib/postgresql/data
-
     ports:
       - "8001:8000" # *************************
     depends_on:
       - db
+    restart: always
   frontend:
-   # build: ./frontend/
     image: babybeardocker/kittygram_frontend
     command: cp -r /app/build/. /static/
 #    command: >
