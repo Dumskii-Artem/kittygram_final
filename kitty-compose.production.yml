@@ -15,6 +15,7 @@ services:
     volumes:
       - static:/backend_static
       - media:/app/media
+      - pg_data
 
     ports:
       - "8001:8000" # *************************
@@ -31,6 +32,7 @@ services:
 #      "
     volumes:
       - static:/static
+      - media:/app/media
 
   gateway:
     image: babybeardocker/kittygram_gateway
