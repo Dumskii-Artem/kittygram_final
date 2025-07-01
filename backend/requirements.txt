@@ -15,7 +15,6 @@ moviepy==2.1.2
 numpy==2.0.2
 pillow==10.4.0
 proglog==0.1.11
-PyAudio==0.2.14
 pycodestyle==2.10.0
 pydub==0.25.1
 pyflakes==3.0.1
