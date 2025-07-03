@@ -25,4 +25,5 @@ COPY . .
 
 # При старте контейнера запустить сервер разработки.
 # CMD ["python", "manage.py", "runserver", "0:8000"]
+# привяжет приложение Taski к порту 8000, доступному извне
 CMD ["gunicorn", "--bind", "0.0.0.0:8000", "kittygram_backend.wsgi:application"]
