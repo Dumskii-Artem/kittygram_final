@@ -1,4 +1,4 @@
-name: Main KittyGram workflow
+name: Not Main KittyGram workflow
 
 on:
   push:

@@ -161,6 +161,6 @@ jobs:
         to: ${{ secrets.TELEGRAM_TO }}
         token: ${{ secrets.TELEGRAM_TOKEN }}
         message: |
-          Вот этот вот ${{ github.actor }} задеплоил KittyGram 
-          с сообщением ${{ github.event.commits[0].message }}
+          ${{ github.actor }} задеплоил KittyGram 
+          с сообщением '${{ github.event.commits[0].message }}'
           ссылка https://github.com/${{ github.repository }}/commit/${{github.sha}}

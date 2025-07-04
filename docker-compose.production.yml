@@ -24,7 +24,6 @@ services:
     command: cp -r /app/build/. /static/
     volumes:
       - static:/static
-      - media:/app/media
   gateway:
     image: babybeardocker/kittygram_gateway
     ports:
