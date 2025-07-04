@@ -2,7 +2,6 @@ volumes:
   pg_data:
   static:
   media:
-
 services:
   db:
     image: postgres:13
@@ -16,22 +15,16 @@ services:
       - static:/backend_static
       - media:/app/media
     ports:
-      - "8001:8000" # *************************
+      - '8001:8000'
     depends_on:
       - db
     restart: always
   frontend:
     image: babybeardocker/kittygram_frontend
     command: cp -r /app/build/. /static/
-#    command: >
-#      sh -c "
-#        cp -r /app/build/* /static/ &&
-#        cp -r /app/build/static/* /static/static/
-#      "
     volumes:
       - static:/static
       - media:/app/media
-
   gateway:
     image: babybeardocker/kittygram_gateway
     ports:
