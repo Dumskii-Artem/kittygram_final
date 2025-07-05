@@ -56,12 +56,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'kittygram_backend.wsgi.application'
 
-USE_POSTGRESQL = os.getenv(
-    'USE_POSTGRESQL_OR_SQLITE',
-    'any_text'
-).lower() == 'postgresql'
-
-if USE_POSTGRESQL:
+if os.getenv('USE_POSTGRESQL', False):
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql',
@@ -118,7 +113,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.IsAuthenticated', 
+        'rest_framework.permissions.IsAuthenticated',
     ],
 
     'DEFAULT_AUTHENTICATION_CLASSES': [
